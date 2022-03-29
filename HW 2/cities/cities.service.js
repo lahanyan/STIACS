@@ -2,8 +2,8 @@ const NotFoundError = require('../errors/not-found.error');
 const citiesRepository = require('./cities.repository');
 
 module.exports = {
-    async getCityByZipCode(index){
-        const city = await citiesRepository.getCityDataByZipCode(index);
+    async getCityByZipCode(zipCode){
+        const city = await citiesRepository.getCityDataByZipCode(zipCode);
         
         if(!city){
             throw new NotFoundError(`No cities found!`); 
